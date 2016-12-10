@@ -13,7 +13,6 @@ echo Appending to $ROUTES
 touch $ROUTES
 chmod 666 $ROUTES
 
-
 # dd-wrt selective domain routing
 WAN_GW="$(nvram get wan_gateway)"
 
@@ -133,8 +132,5 @@ ip route flush cache
 EOF
 
 chmod +x $SCRIPT
-#sleep 60
-#$SCRIPT
-
-#Now startup the new inadyn ...
-/jffs/ddns2/inadyn --input_file /jffs/ddns2/inadyn.conf --cache_dir /jffs/ddns2
+sleep 60
+$SCRIPT
